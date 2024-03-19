@@ -1,17 +1,31 @@
 import React from 'react'
 
-const Second = () => {
-    const music =[
-        {
-            name:"Charm",
-            image:""
-        }
-    ]
+const Second = ({album}) => {
+    const Tab = ({e})=>{
+        return(
+            <div className=' mx-10 relative cursor-pointer border-[1px] border-darkgray rounded-sm overflow-hidden'>
+                <div className=' absolute top-0 w-full h-full bg-black bg-opacity-30 hover:bg-opacity-0'></div>
+                <div style={{backgroundImage:`url(${e.images[0].url})`}} className=' bg-cover w-[200px] h-[200px]'>
+                    
+                </div>
+            </div>
+        )
+    }
   return (
-    <div className=' bg-black text-white flex justify-start pt-40'>
-        <div className=' w-full flex flex-col items-center'>
-            <h1 className=' text-5xl font-bold'>TRENDING MUSIC</h1>
+    <div className=' pb-20 bg-black text-white flex flex-col items-center justify-start pt-20'>
+        <div className=' w-full flex flex-col items-center mb-10'>
+            <h1 className=' text-4xl font-bold'>TOP MUSIC ALBUM</h1>
         </div>
+        <div className=' flex'>
+            {album?.albums.map((e)=>{
+                return(
+                    <div key={e.id} >
+                        <Tab e={e}/>
+                    </div>
+                )
+            })}
+        </div>
+
     </div>
   )
 }
