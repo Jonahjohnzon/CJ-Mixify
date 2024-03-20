@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom' 
 import { IoIosMusicalNotes } from "react-icons/io";
-import {TbMusicOff, TbMusic} from 'react-icons/tb'
+import { TbMusic} from 'react-icons/tb'
 import { FaRegUserCircle } from "react-icons/fa";
 import { Formik } from 'formik'
 import * as yup from 'yup'
