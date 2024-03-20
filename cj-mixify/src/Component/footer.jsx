@@ -30,6 +30,9 @@ const Footer = () => {
               </li>
               <li className=" mb-2 text-sm  xs:text-base">+234 810 690 8991</li>
               <li className=" mb-2 text-sm  xs:text-base">
+              emodopeace99@gmail.com
+              </li>
+              <li className=" mb-2 text-sm  xs:text-base">
                 jonahjohnzon@gmail.com
               </li>
               <li className=" mb-2 text-sm  xs:text-base">Lagos, Ikeja</li>
@@ -67,7 +70,7 @@ const Footer = () => {
                   Twitter
                 </li>
               </Link>
-              <Link to="https://www.linkedin.com/in/jojome/">
+              <Link to="https://www.linkedin.com/in/chiamaka-emedo-205763251/">
                 <li className=" mb-2 text-sm  xs:text-base cursor-pointer hover:text-cream">
                   LinkedIn
                 </li>
