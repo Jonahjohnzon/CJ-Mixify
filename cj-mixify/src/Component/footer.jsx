@@ -54,7 +54,7 @@ const Footer = () => {
               </Link>
             </ul>
           </div>
-          <div className=" w-full flex justify-end">
+          <div className=" w-full flex lg:justify-end">
             <ul className=" text-gray font-medium mb-10">
               <li className=" text-lg font-bold mb-5 text-white">FOLLOW US</li>
               <Link to="https://www.facebook.com/jonah.johnzon.5/">

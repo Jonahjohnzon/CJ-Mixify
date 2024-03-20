@@ -1,9 +1,14 @@
-import React, { useRef } from "react";
+import React from "react";
 import EffectText from "../../EffectText";
 
 
 const Fifth = () => {
-
+  function scrollToBottom() {
+    window.scrollTo({
+      top: 10000,
+      behavior: 'smooth'
+  });
+}
 
   return (
     <div className=' bg-[url("/area_bg2.jpg")] bg-cover bg-center text-white font-barlow'>
@@ -50,7 +55,7 @@ const Fifth = () => {
                 </div>
                 <div>
                   <div className=" w-[70%] xs:w-1/2 rounded-sm overflow-hidden">
-                    <div className="  text-center w-full py-3 bg-orange font-semibold">JOIN US</div>
+                    <div className="  text-center w-full py-3 bg-orange font-semibold" onClick={scrollToBottom}>JOIN US</div>
                   </div>
                 </div>
               </div>

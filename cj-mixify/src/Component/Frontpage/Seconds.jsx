@@ -2,13 +2,14 @@ import React from 'react'
 import { FaStar } from "react-icons/fa";
 
 import { BiSolidGrid } from "react-icons/bi";
+import { Link } from 'react-router-dom';
 
 const Seconds = ({Datas}) => {
 
     const Data = ()=>{
         const info = Datas.tracks.items.map((e)=>{
             return(
-                <div key={e.id} className=''>
+                <Link  to={e.external_urls.spotify} key={e.id}><div  className=''>
                     <div style={{backgroundImage:`url(${Datas.images[0].url})`}} className='  mb-5 mr-10   relative flex justify-center items-center w-[300px] border-silver border-opacity-20 border-[1px]    h-[350px]  bg-cover bg-center group  rounded-xl overflow-hidden' >
                         <div className=' absolute sm:cursor-pointer ease-in-out  w-full h-full bg-black z-30 opacity-40 group-hover:opacity-80 transition-all duration-500 '></div>
                         <div className=' relative w-full z-30 opacity-0 group-hover:opacity-100 flex flex-col items-center ease-in-out transition-all duration-700'>
@@ -20,7 +21,7 @@ const Seconds = ({Datas}) => {
                             <div className=' flex items-center'><div className=' text-yellow-400 mr-1 text-silver'><FaStar /></div></div>
                         </div>
                     </div>
-                </div>
+                </div></Link>
 
             )
         })

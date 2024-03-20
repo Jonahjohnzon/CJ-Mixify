@@ -11,8 +11,10 @@ const user = mongoose.Schema({
     password:{
         type:String
     },
-    favourite:{
-        type: [String] 
-    }
+    favorite: [{
+        name: { type: String, required: true },
+        music: { type: String, required: true },
+        link: { type: String, required: true }
+    }]
 },{timestamps:true})
 module.exports.user = mongoose.model('user', user)

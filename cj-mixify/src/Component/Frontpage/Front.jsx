@@ -4,13 +4,16 @@ import Second from './Second'
 import { Buffer } from 'buffer';
 import Fifth from './fifth';
 import Footer from '../footer';
-import Fourth from './Fourth';
 import Seconds from './Seconds';
+import Favorite from './Favorite';
+import Loding from '../Loding';
 
 
 
 
-const Front = () => {
+const Front = ({show, setshow}) => {
+  const [token, settoken] = useState("")
+  const [id, setid] = useState("")
   const [album, setAlbum] = useState([])
   const [load, setload] = useState(true)
   const [track, setTrack] = useState([])
@@ -39,6 +42,12 @@ const Front = () => {
 
   }
   useEffect(()=>{
+    const storedData = localStorage.getItem('myData');
+    if (storedData) {
+        const parsedData = JSON.parse(storedData);
+        settoken(parsedData.token)
+        setid(parsedData.data._id)
+      }
     Gets()
   },[])
   const getTrack =async (token) =>{
@@ -68,13 +77,13 @@ const Front = () => {
   return (
     <div>{
       load?
-      <div></div>
+      <Loding/>
       :
       <>
         <Head/>
+        {(token != "" && show) &&<Favorite  id={id} setshow={setshow}/>}
         <Second album={album}/>
         <Fifth/>
-        <Fourth/>
         <Seconds Datas={track}/>
         <Footer/>
         </>}

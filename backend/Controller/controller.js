@@ -70,4 +70,36 @@ const loginIn = async(req, res) =>{
     
 }
 
-module.exports = {userData, loginIn}
+const findFavor = async(req, res)=>{
+    const id = req.params.id
+    const data = await user.findOne({_id: id})
+    if(!data){
+        return
+    }
+    else{
+        return res.json({favourite:data.favorite})
+    }
+}
+
+const addFavor = async(req, res)=>{
+    const id = req.params.id
+    const { name, music, link } = req.body.musicname
+  
+    try {
+        const updatedUser = await user.findOneAndUpdate(
+            { _id: id },
+            { $push: { favorite:  { name, music, link } } },
+            { new: true }
+        );
+
+        if (!updatedUser) {
+            return res.status(404).json({ error: 'User not found' });
+        }
+
+        return res.json(updatedUser);
+    } catch (err) {
+        console.error(err);
+        return res.status(500).json({ error: 'Internal server error' });
+    }
+}
+module.exports = {userData, loginIn, findFavor, addFavor}
